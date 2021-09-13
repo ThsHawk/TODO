@@ -16,10 +16,12 @@ __fastcall TForm1::TForm1(TComponent* Owner)
 //---------------------------------------------------------------------------
 void __fastcall TForm1::AddButtonClick(TObject *Sender)
 {
-	String taskText = TaskInput->Text;
-	TasksListBox->Items->Add(taskText);
+	if(TaskInput->Text != ""){
+		String taskText = TaskInput->Text;
+		TasksListBox->Items->Add(taskText);
 
-	TaskInput->Text = "";
+		TaskInput->Text = "";
+	}
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm1::TasksListBoxItemClick(TCustomListBox * const Sender, TListBoxItem * const Item)
